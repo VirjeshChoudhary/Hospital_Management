@@ -85,7 +85,6 @@ export const addNewAdmin=catchAsyncErrors(async(req,res,next)=>{
     })
 })
 
-
 export const getAllDoctors=catchAsyncErrors(async (req,res,next)=>{
     const doctors= await User.find({role : "Doctor"});
     res.status(200).json({

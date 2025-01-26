@@ -87,8 +87,9 @@ export const getAllAppointments=catchAsyncErrors(async (req, res, next) => {
       success: true,
       appointments,
     });
-  });
-  export const updateAppointmentStatus = catchAsyncErrors(
+});
+
+export const updateAppointmentStatus = catchAsyncErrors(
     async (req, res, next) => {
       const { id } = req.params;
       let appointment = await Appointment.findById(id);
@@ -105,8 +106,9 @@ export const getAllAppointments=catchAsyncErrors(async (req, res, next) => {
         message: "Appointment Status Updated!",
       });
     }
-  );
-  export const deleteAppointment = catchAsyncErrors(async (req, res, next) => {
+);
+
+export const deleteAppointment = catchAsyncErrors(async (req, res, next) => {
     const { id } = req.params;
     const appointment = await Appointment.findById(id);
     if (!appointment) {
@@ -117,4 +119,4 @@ export const getAllAppointments=catchAsyncErrors(async (req, res, next) => {
       success: true,
       message: "Appointment Deleted!",
     });
-  });
+});

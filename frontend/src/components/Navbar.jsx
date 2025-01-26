@@ -13,7 +13,7 @@ const Navbar = () => {
   const navigate=useNavigate();
 
   const handleLogout=async(e)=>{
-    await axios.get("https://hospital-management-backend-ga14.onrender.com/api/v1/user/patient/logout",{
+    await axios.get("https://hospital-management-backend-b1un.onrender.com/api/v1/user/patient/logout",{
       withCredentials:true,
     }).then((res)=>{
       toast.success(res.data.message);
